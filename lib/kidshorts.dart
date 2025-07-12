@@ -97,7 +97,7 @@ class _ReelsPageState extends State<ReelsPage> {
   }
 
   void _checkForPopup() {
-    if (_totalWatchTime.inSeconds >= 5 && !_popupShown) {
+    if (_totalWatchTime.inSeconds >= 10 && !_popupShown) {
       _popupShown = true;
 
       showGeneralDialog(

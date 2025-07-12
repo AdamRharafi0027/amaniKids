@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'puzzle_page.dart';
+import 'ChoosePuzzlePage.dart';
 
 class TaskActivity extends StatelessWidget {
   final List<Map<String, String>> categories = [
@@ -89,7 +91,12 @@ class TaskActivity extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          // TODO: Navigate to related content
+                          if (category['label'] == 'الألغاز') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => ChoosePuzzlePage()),
+                            );
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.yellow,
@@ -113,7 +120,7 @@ class TaskActivity extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.white, // Background color so white text is visible
+      backgroundColor: Colors.white,
     );
   }
 }
